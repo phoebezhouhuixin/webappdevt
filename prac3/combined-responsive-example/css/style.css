@@ -1,0 +1,45 @@
+
+#gallery { 
+  display:flex; /* row layout */
+  flex-wrap:wrap; /* forces items to break apart from each other
+  rather than all appearing in the same row*/
+  /* This code happens only if the screen is >890px (see the media query below) */
+}
+
+.box {
+  height: 200px;
+  width: 200px;
+  background-color: blue;
+  border:2px black solid;
+  margin:15px;
+}
+
+@media (min-width:600px) { /* it's for 600px and above */
+  nav ul li {
+    display:inline-block; /* row layout for nav menu*/
+    padding:10px;
+    margin: 0px;
+    background-color:burlywood;
+    color:grey;
+  }
+  nav ul li:hover {
+   background-color:bisque;
+  }
+  nav {
+    background-color:burlywood;
+  }
+}
+
+@media(max-width:890px) { /* Applies to screens <600px also. 
+  That is why gallery is in a column when using phone screen*/ 
+  #gallery { 
+    flex-direction:column; 
+    /* overrides the row layout in the "#gallery" above*/
+    align-items: center;
+  }
+
+  .box {
+    margin-bottom:20px;
+    width: 400px;
+  }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles.css">
+  <title>Devtools Test</title>
+</head>
+<body>
+  <h1>Hello THIS IS A CHANGE</h1>
+  <button>Button</button>
+  
+</body>
+
+<script>
+  console.log('Hello');
+  // console.log(myvar); // code will not run beyond this point when this throws an error
+  console.error('An error');
+  console.warn('A warning');
+  console.dir(document);
+
+  console.table([{name:'John', email:'test@test.com', age:33}]);
+
+  // console.clear();
+
+  console.group('Say Hello'); 
+    console.log('Hello Brad');
+    console.log('Hello John');
+    console.log('Hello Sally');
+  console.groupEnd('Say Hello');
+
+  console.time('Run Loop');
+  for (var i = 0; i < 2; i++) {
+      console.log(i);
+  };
+  console.timeEnd('Run Loop');
+
+  function greaterThan(a,b) {
+    console.assert(a > b, {"message":"a is not greater than b","a":a,"b":b});
+  }
+  
+  // greaterThan(5,6);
+  greaterThan(6,5);
+
+  document.querySelector('button').addEventListener('click', loadUsers);
+
+  // Load Github Users
+  function loadUsers(){
+   var xhr = new XMLHttpRequest();
+   xhr.open('GET', 'https://api.github.com/users', true);
+
+   xhr.onload = function(){
+     if(this.status == 200){
+         console.log("Users returned")
+     }
+   }
+   xhr.send();
+  }
+
+  // Set localstorage - will stay until you press clear
+  // localStorage.setItem('name','John');
+
+  // Set sessionstorage - will stay until browser close
+  // sessionStorage.setItem('user', 'Will');
+
+  // Set cookie
+  //document.cookie = "username=John Doe";
+
+</script>
+</html>

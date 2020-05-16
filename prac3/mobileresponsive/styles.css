@@ -1,0 +1,16 @@
+#main {
+    display: flex; /* makes articles go from left to right by default */
+    flex-direction: row;
+    /* TODO: max no of bubble tea headlines within one row
+     flex-wrap: wrap; */
+    justify-content: space-evenly;
+}
+.news {
+    padding:2em;
+    text-align: justify;
+}
+@media only screen and (max-width:500px){
+    #main { /* override */
+        flex-direction: column;
+    }
+}

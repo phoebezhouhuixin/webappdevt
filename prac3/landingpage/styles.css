@@ -1,0 +1,59 @@
+body {
+
+}
+#nav-menu { /* or ul#nav-menu */
+    padding : 0;
+    background-color: black;
+    background-image: url(japanese-food-4.jpg);;
+}
+#nav-menu li { 
+    /* look for all the li's within the element that has the id "nav-menu"*/
+    display: inline-block; /* different li's will be listed on the same row,
+     not bullet points */
+    background-color:red;
+    margin-right: 20px; /* spacing between 2 li's */
+    padding: 12px;
+    /* margin-top: 100px; overrides simply "margin: 20px" */
+}
+#nav-menu a { /* the a's can be nested in li's */
+    color: black;
+    text-decoration: none; /* remove the underlines for the links */
+    font-size: 24px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 10px; /* padding around the linktext */
+    display: inline-block; /* Each link a is an inline object, hence
+    padding doesn't work unless we say that a is an inline-block rather than inline*/
+}
+#nav-menu a:hover {  
+    /* select the a's within element of id nav-menu , and specify the action*/
+    background-color: green;
+}
+#about-us {
+    background-image: url(japanese-food-1.jpg); /* no quotes */
+    /* need to specify the height of "About us" section
+     because there is no text yet, so the section is too short to 
+     allow the full image to show */
+    height: 1000px;
+    background-size: cover; /* cover the entire section */
+    padding: 0.5px; /*need to say this because of the "margin collapse problem"
+    which makes the about-us-text not have margin-top even though we specify
+    that we want 20px */
+}
+#about-us-text {
+    margin-left: 20px;
+    margin-top: 20px; /* margin collapse problem. need to go to the parent element 
+    (check which element is the parent using the html nesting) 
+    and add padding to the parent element */
+    color: white;
+}
+#our-menu {
+    background-image: url(japanese-food-2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 50px;
+}
+#promotions {
+    background-image: url(japanese-food-3.jpg);
+    background-size: cover;
+    height: 600px;
+}

@@ -1,0 +1,21 @@
+/* lesser than 600px */
+@media  (max-width:600px) {
+
+  nav ul {
+    padding-left:0;
+  }
+
+  nav ul li {
+    list-style:none;
+    padding: 20px;
+    background-color: burlywood;
+    border: 1px black solid;
+    
+  }
+
+  #guitar {
+    display:none;
+  }
+}
+
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble tea delivery online</title>
+    <style>
+        /* CSS language begins here. 
+        Each curly bracket is a CSS rule */
+        h1 { /* selector */
+            color: red; /* property of css rule: css value. 
+            For all css properties, look in w3schools*/
+        }
+        p {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: green;
+        }
+        p#intro { /* target the selector to a specific id */
+            color: cornflowerblue;
+        }
+        h1#about-us {
+            font-size: 64px;
+        }
+        /* li.bestseller { id uses #, while class uses . 
+            background-color: yellow;
+        }
+        span.bestseller {
+            background-color: yellow;
+        } */
+        .bestseller { /* select ANY element with the class "bestseller" */
+            background-color: yellow;
+        }
+        p#about-us-text span { /* look for all the spans in the paragraph with that id */
+            color: orange;
+            font-size: 64px;
+        }
+    </style>
+</head>
+<body>
+    <h1> Bubble tea delivery online</h1>
+    <p id = "intro"> <!-- element ids should be unique, even though the page will still work otherwise-->
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt ex nec nibh porttitor fermentum. Sed sit amet tortor quis ex tempor consectetur. Cras odio elit, lobortis ut varius eu, finibus eget lorem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer eleifend purus quis purus volutpat sodales. Aliquam gravida viverra arcu, eu imperdiet felis pharetra in. Ut tempor mattis nibh, sed hendrerit est tincidunt ac. Donec nisi ante, varius ac posuere sed, pretium at nulla. Mauris placerat felis nec ex pharetra bibendum. Praesent fermentum tristique lectus at cursus. Pellentesque porttitor at turpis quis pharetra. Vivamus posuere metus id tellus pharetra interdum. Donec id volutpat tellus, sed tincidunt elit. Nullam ac ipsum massa. Maecenas rutrum nunc risus, et laoreet justo maximus vitae
+    </p>
+    <p>
+        Vestibulum id pretium leo. Donec purus eros, consequat aliquam nunc at, mattis maximus neque. Nulla enim mauris, pretium vel commodo et, vestibulum et nibh. Integer sollicitudin lobortis neque id rutrum. Mauris dictum tempus turpis, quis sagittis risus eleifend quis. Vivamus et congue lacus, nec sollicitudin dui. Nulla iaculis fermentum metus, et sagittis mauris efficitur sit amet. Cras eleifend sed nibh ac rhoncus. Ut ac consectetur ex, quis ullamcorper odio. Nullam egestas vitae metus ut efficitur. Aliquam facilisis tortor volutpat tempus maximus.
+    </p>
+    <h1 id = "about-us">About us</h1>
+    <p id = "about-us-text">Order <span>our milk teas</span> (especially 
+        <span class = "bestseller">oreo milk tea</span>) 
+        <!--can combine css rules for about-us-text span, and span class bestseller-->
+        now to avoid disappointment!
+    </p>
+    <h2>Our flavours</h2>
+    <ul>
+        <li class = "bestseller">Oreo milk tea</li> 
+        <!-- Use class instead of id if you want to style multiple elements with the same css style
+        A class is a type of item and the id is the unique name of an item on the page. 
+        An element can have more than one class, but only one id -->
+        <li>Hokkaido milk tea</li>
+        <li class = "bestseller">Peachy apple slush</li>
+    </ul>
+    <p>Our bestsellers are <span class = "bestseller">oreo milk tea</span> and <span class = "bestseller">peachy apple slush</span>
+    </p>
+</body>
+</html>

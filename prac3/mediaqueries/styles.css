@@ -1,0 +1,14 @@
+body {
+    background-color: green;
+}
+@media only screen and (min-width: 800px){ /* if width of screen is ≥800px. 
+    No whitespace between 800 and px*/
+    body {
+        background-color: yellow;
+    }
+}
+@media only screen and (max-width: 400px){ /* if width of screen is ≤400 */
+    body {
+        background-color: blue;
+    }
+}

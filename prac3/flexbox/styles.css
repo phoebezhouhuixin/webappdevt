@@ -1,0 +1,16 @@
+.box {
+    width: 100px;
+    height: 100px;
+    border: 1px salmon solid;
+}
+#container {
+    display: flex; /* "box" now goes from left to right */
+    flex-direction: row;
+    width: 100%; /* stretch all the way to the end of the screen*/
+    /* The % is calculated as the % of the immediate parent element. 
+    Thus, height:100% would only stretch to the end of the body, 
+    unless the body tag and the html tag are also both 100% */
+
+    /* justify-content: center; or flex-end for all the way on the RHS */
+    justify-content: space-evenly;
+}
