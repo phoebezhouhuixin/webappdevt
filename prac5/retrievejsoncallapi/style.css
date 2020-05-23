@@ -1,0 +1,43 @@
+* { 
+  padding:0;
+  margin: 0;
+}
+
+#container { /* the div id that holds all the pages */
+  position: relative;
+  height: 100vh;
+  background-color:aliceblue;
+}
+
+.page { /* the 3 divs for the 3 pages, that have class page */
+  position: absolute;
+  width:100%;
+  will-change: transform;
+}
+
+.hidden { /* each page div starts off with class hidden, when index.html loads */
+  transform: translateX(-100%);
+}
+
+.show { /* when button is clicked, add this class to the page's div */
+  transform: translateX(0);
+  transition: transform 0.25s ease-out;
+}
+
+#page3-btn { /* example of styling a button; the rest of the buttons will be default */
+  text-decoration: none;
+  color: black;
+}
+
+.responsive-img { /* we don't want the user to scroll horizontally to see the full jpg*/
+  width: 100%;
+  height: auto;
+}
+
+blockquote { /* there is no tag in index.html called blockquote yet, but we will
+  use it in the HTML template that is created in script.js' page 3 */
+  padding: 2em;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size:32px;
+  font-style:italic;
+}

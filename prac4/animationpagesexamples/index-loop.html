@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <nav> <!-- you can define custom attributes for elements using data-* -->
+      <button data-pagenum='0' id="page1-btn" class="change-page-btn">Page One</button>
+      <button data-pagenum='1' id="page2-btn" class="change-page-btn">Page Two</button>
+      <a data-pagenum='2' href="#" id="page3-btn" class="change-page-btn">Page Three</a>
+    </nav>
+    <div id="container">
+      <div class="page hidden" id="page-one">
+        <h1>Page One</h1>
+        <p>
+          One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought. It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather. Drops
+          </p>
+      </div>
+
+      <div class="page hidden" id="page-two">
+        <h1>Page Two</h1>
+      </div>
+
+      <div class="page hidden" id="page-three">
+        <h1>Page Three</h1>
+      </div>
+    </div>
+    <script src="script-loop.js"></script>
+  </body>
+</html>

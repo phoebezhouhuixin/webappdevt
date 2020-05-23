@@ -16,7 +16,8 @@
 
 @media (min-width:600px) { /* it's for 600px and above */
   nav ul li {
-    display:inline-block; /* row layout for nav menu*/
+    display:inline-block; /* row layout for nav menu. 
+    For less than 600px, column layout is used instead (see phone.css) */
     padding:10px;
     margin: 0px;
     background-color:burlywood;

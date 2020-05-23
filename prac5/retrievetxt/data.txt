@@ -1,0 +1,3 @@
+txt files are readable by humans.
+The quick brown fox jumps over the lazy dog.
+Jack and Jill went up the hill to take a roller coaster.

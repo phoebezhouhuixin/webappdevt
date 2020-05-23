@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <!-- preloading -->
+    <img src="kafka.jpg" style="width:0"/> 
+    <!-- kafka.jpg is needed in page-one.html, 
+      which is GETed when we click the page one button -->
+    <nav>
+      <button id="page1-btn">Page One</button>
+      <button id="page2-btn">Page Two</button>
+      <a href="#" id="page3-btn">Page Three</a>
+    </nav>
+    <div id="container">
+      <div class="page hidden" id="page-one"> 
+        <!-- #page-one has both the page class and the hidden class-->
+        <!-- The page one content does not exist yet because we have not GETed the 
+          page-one.html. So we will leave this div empty-->
+      </div>
+
+      <div class="page hidden" id="page-two">
+        <h1>Page Two</h1>
+        <div id="content"></div> <!--also empty, because we have not GETed data.json-->
+      </div>
+  
+      <div class="page hidden" id="page-three">
+        <h1>Page Three</h1> 
+        <!-- we will call an external API to populate the rest of this div-->
+      </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="script.js"></script> <!-- axios import must be BEFORE script.js-->
+  </body>
+</html>

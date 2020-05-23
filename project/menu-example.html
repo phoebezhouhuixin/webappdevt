@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Menu toggle</title>
+  <style>
+    .menu{
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<a href="#" class="menuToggle">Toggle Menu</a>
+
+<nav class="menu">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<script>
+  const menu = document.querySelector('.menu');
+  const menuToggle = document.querySelector('.menuToggle');
+
+  menuToggle.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if (window.getComputedStyle(menu).display === 'block') {
+      menu.style.display = 'none';
+    } else  {
+      menu.style.display = 'block';
+    }
+  });
+</script>
+</body>
+
+</html>

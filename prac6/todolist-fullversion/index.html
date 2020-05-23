@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+
+    <div id='add-form'>
+        <div>
+          <label>Todo Name</label>
+          <input type="text" id="todo-name"/>
+        </div>
+        <div>
+          <label>Priority</label>
+          <input type="text" id="priority"/>
+        </div>
+        <button id="add-btn">Add</button>
+    </div>
+
+    <hr/>
+    <h3>Filter by priority</h3>
+    <input type="text" placeholder="Lower Priority" id="lower">
+    <input type="text" placeholder="Upper priority" id="upper">
+    <button id='filter-btn'>Filter</button>
+    <div id="todo-display">
+
+    </div>
+
+    <!-- Promise-based indexed db -->
+    <script src="idb.js"></script>
+    <!-- Our own database utility JS -->
+    <script src="db.js"></script> <!-- must be before script.js"-->
+    <!-- our own script -->
+    <script src="script.js"></script>
+  </body>
+</html>

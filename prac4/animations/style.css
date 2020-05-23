@@ -1,0 +1,18 @@
+.box{
+    width: 60px;
+    height: 60px;
+    background-color: orange;
+    transition: height 2s ease-out, width 2s ease-out, transform 2s ease-out; 
+    /* i.e. Upon hover, do not jump to 120px, but instead, animate till 120px.
+    Each line in .box:hover must be accounted for here, in the transition property of .box*/
+    /* Ease-in = acelerating, ease-out = decelerating, linear = same rate */
+}
+/* .box:hover{ 
+    height: 120px; 
+    width: 120px;
+    transform: translateX(100px);
+} */
+
+.moving { /* can implement a .moving class for all element that must move */
+    transform: translateY(200px) /* move right */
+}

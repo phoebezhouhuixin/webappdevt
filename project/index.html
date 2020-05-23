@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Eastern Phoebe</title>
+    <link href = "./css/styles.css" rel = "stylesheet">
+</head>
+<body>
+<div id = "topbar">
+
+    <!-- WEBSITE NAME -->
+    <h1><a href = "index.html" style = "font-size: em;">The Eastern Phoebe</a></h1>
+
+    <!-- BUTTON TO OPEN MENU  -->
+    <a href="#" class="menuToggle">
+        <img src = "./menuicon.png" id = "menuicon">
+    </a>    
+
+    <!-- THE MENU (HIDDEN AT FIRST) -->
+    <nav id = "topbar-menu"> 
+
+        <!-- BUTTON TO CLOSE MENU -->
+        <div id = "menu-header">
+            <a href="#" class="menuToggle" style="float: right;">
+                <img src = "./closeicon.png" id = "closeicon">
+            </a>
+        </div>
+
+        <!-- MENU CONTENTS -->
+        <div id = "menu-body">
+            <ul id = "menu-text">
+                <li><a href = "index.html">Home</a></li>
+                <li class = "dropdown">Explore</li>
+                <li><a href = "happenings.html">Happenings</a></li>
+            </ul>
+            <ul id = "menu-social">
+                <!-- <li><a href = ""></a></li> -->
+            </ul>
+        </div>    
+    </nav>
+</div>
+<script src = "./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+#main {
+    display: flex; /* makes articles go from left to right by default */
+    flex-direction: row;
+    flex-wrap: wrap; 
+    justify-content: space-evenly; /* distance between each flexbox 
+    (i.e. each <section class="news">) */
+}
+.news { /* i.e. each <section class="news"> , corresponding to each bubble tea article */
+    /* i.e. Each bubble tea article corresponds to one flexbox */
+    padding:2em;
+    text-align: justify;
+    flex: 1 0 40%; /* max no of bubble tea headlines within one row is 2*/
+}
+@media only screen and (max-width:500px){
+    #main { /* override */
+        flex-direction: column;
+    }
+}

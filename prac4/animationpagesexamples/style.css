@@ -1,0 +1,41 @@
+* { /* otherwise a tiny part of the text will be peeking out from the LHS of the screen */
+    padding:0;
+    margin: 0;
+}
+
+#page3-btn {
+    text-decoration: none;
+    color: black;
+}
+
+#container {
+    /* position: relative; */
+    height: 100vh; /* stretch all the way to the end of the screen */ 
+    background-color:aliceblue;
+}
+
+.hidden {
+    transform: translateX(-100%); /* Move left by 100% of the length of the element. 
+    Every piece of translateX-ed text is overlaid one on top 
+    of another, instead of having to scroll down the page, 
+    BECAUSE index.html put all the page divs into a container div,
+    and the container CSS rule has "position:relative", while the page CSS rule
+    has "position:absolute" --> together, these two properties mean that
+    each page div is no longer block-level */
+
+    /* For position:absolute to work, the parent must have position:relative */
+}
+
+.page {
+    position: absolute;
+    width:100%;
+    will-change: transform;
+    /* transition: transform 0.5s ease-out; if we put this here, 
+    then hiding will have ease out, rather than disappearing immediately*/
+}
+
+.show {
+    transform: translateX(0); /* 0px, not 0%, i.e. put the element at the zero coordinate
+    of the x-axis of the screen*/
+    transition: transform 0.5s ease-out; /* JS animation*/
+}
