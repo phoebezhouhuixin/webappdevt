@@ -34,7 +34,7 @@ async function addTodo(db, todoName, priority ) {
   let tx = db.transaction('todos', 'readwrite');
   // IDBDatabase.transaction()
   // A Transaction object contains the objectStore() method,
-  // which you can call to access an object store. 
+  // which you can call to access an object store of a certain object store name ("todos"). 
 
   // retrieve the object store by calling the objectStore() 
   // method of the transaction object
@@ -64,9 +64,10 @@ async function getAllTodos(db) {
   let tx = db.transaction('todos', 'readonly');
   let store = tx.objectStore('todos');
   // getAll() returns all the objects in the datastore 
-  return await store.getAll(); // return the objects; 
-  // don't just return "await tx" which is
-  // "complete"/"fail" rather than the objects/"fail"
+  return await store.getAll(); // returns an IDBRequest object 
+  // containing all objects in the object store.
+  // Note: don't just return "await tx" which is
+  // "complete"/"fail" rather than IDBRequestobject/"fail"
 }
 
 async function deleteTodo(db, idToDelete) {
@@ -85,5 +86,15 @@ async function updateTodo(db, newTodoInfo) {
   let tx = db.transaction('todos', 'readwrite');
   let store = tx.objectStore('todos');
   await store.put(newTodoInfo); // vs add()
+  // how does store.put() know which object to update?
+  // ohhh because the IDBObjectStore.put() function always occurs by primary key.
+  // In our dbname called "todo-db",
+  // the primary key of each object in the "todos" object store
+  // is "id", which is autoincremented (see connect()).
+  // Note that "t.title =newTitle" (in script.js) is NOT the primary key of the object.
+  // We have one update button for one object in the todo list, 
+  // hence the id of the object is tied to that update button, 
+  // therefore we can change the task title and 
+  // task priority to anything we want, and yet still update the correct object by id.
   await tx;
 }

@@ -11,13 +11,17 @@ async function start() {
 		let title = document.querySelector("#todo-name").value;
 		let priority = document.querySelector("#priority").value;
 		await addTodo(db, title, priority, false);
-		displayTodo(db);
-		document.querySelector('#todo-name').value = "";
+		displayTodo(db); // can say this here even though we only define displayTodo() at the bottom
+		
+		// reset the form fields so that the user can enter another input
+		document.querySelector('#todo-name').value = ""; 
 		document.querySelector("#priority").value = "";
-	})
-} // end start
+	}) // end async function(), end addEventListener()
+} // end start()
 
+// Function to display the most current list of todos
 async function displayTodo(db) {
+	// place the priority in brackets next to the todo title 
 	let template = `<span class='todo-title'></span> (<span class="todo-priority"></span>)
 	<button class='delete-btn'>Delete</button>
 	<button class='update-btn'>Update</button>
@@ -29,7 +33,8 @@ async function displayTodo(db) {
 	// clear the list
 	todoList.innerHTML = "";
 
-	let todos = await getAllTodos(db);
+	let todos = await getAllTodos(db); // getAllTodos() returns "await store.getAll();" 
+	//which is a IDBRequest object
 	for (let t of todos) {
 		let todoElement = document.createElement("li");
 		todoElement.innerHTML = template;
@@ -39,7 +44,7 @@ async function displayTodo(db) {
 		// add the click event for the delete btn
 		todoElement.querySelector('.delete-btn').addEventListener('click', async function () {
 			await deleteTodo(db, t.id);
-			displayTodo(db);
+			displayTodo(db); // must be async-await because we must delete before displaying
 		});
 
 		// add the click event for the update btn
@@ -47,9 +52,11 @@ async function displayTodo(db) {
 			let newTitle = prompt("New title");
 			let priority = prompt("New priority");
 			t.title = newTitle;
-			// make sure it is a proper integer so that we can search by upper bound and lower bound later
-			t.priority = parseInt(priority);
-			await updateTodo(db, t);
+			t.priority = parseInt(priority); // parseInt() converts a string to an integer
+			// so that we can search by upper bound and lower bound later
+
+			await updateTodo(db, t); 
+			// how does updateTodo know which object we want to update? (see db.js)
 			displayTodo(db);
 		});
 
