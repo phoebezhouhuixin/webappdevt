@@ -1,57 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Photon &mdash; Colorlib Website Template</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300i,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
+<head>
+  <title>The Eastern Phoebe</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300i,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
 
-    <link rel="stylesheet" href="css/lightgallery.min.css">    
-    
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
 
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-    
-    <link rel="stylesheet" href="css/swiper.css">
+  <link rel="stylesheet" href="css/lightgallery.min.css">
 
-    <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
 
-    <link rel="stylesheet" href="css/style.css">
-    
-  </head>
-  <body>
-  
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+  <link rel="stylesheet" href="css/swiper.css">
+
+  <link rel="stylesheet" href="css/aos.css">
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
   <div class="site-wrap">
+    <!-- Chrome computes a ":before" element here, which is not shown in VSCode. This is because
+      Two of the rules in the CSS files are:
+      *, :after, :before {box-sizing: border-box;} and
+      .site-wrap:before {... content: ""; ... }
 
-    <div class="site-mobile-menu">
+      :before creates a pseudo-element that is the first child of the selected element (in this case, the site-wrap). 
+
+      It is often used to add cosmetic content to the elements that have the "nameOfElemClass:before"
+      CSS rule. (the added stuff is inline by default).-->
+
+    <!-- (1) MOBILE VERSION: DIV FOR THE DROPDOWN MENU ON THE RHS. THIS IS THE ENTIRE RHS COLUMN THAT DROPS DOWN WHEN YOU CLICK ON THE "OPEN MENU" TOGGLE. 
+      In the desktop version, we don't see this because there are more classes that are added to this div (other than site-mobile-menu), and the CSS rules of those classes include translateX(110%) such that we don't see the mobile menu anymore-->
+    <div class="site-mobile-menu">)
+
+      <!-- (1.1) MOBILE VERSION: DIV FOR THE "CLOSE MENU" TOGGLE-->
       <div class="site-mobile-menu-header">
         <div class="site-mobile-menu-close mt-3">
           <span class="icon-close2 js-menu-toggle"></span>
+          <!--
+            From the CSS rule: [class^="icon-"], [class*=" icon-"] 
+            The [attribute*="value"] selector is used to select elements whose 
+            attribute contains a specified value, e.g. [class*="substringOfTheClassName"] .
+            Use ^= instead of *= for "starts with" instead of just "contains".
+            https://www.w3schools.com/css/css_attribute_selectors.asp
+          -->
         </div>
       </div>
-      <div class="site-mobile-menu-body"></div>
+
+      <!-- (1.2) MOBILE VERSION: DIV FOR THE DROPDOWN MENU CONTENT -->
+      <div class="site-mobile-menu-body">
+        <!-- HTML code for the ul is defined only below,
+        but will be computed by chrome here in this div when in mobile version. TODO: How does chrome know where to put the HTML content when in mobile version? Find the toggle js-->
+      </div>
     </div>
-    
+
+    <!--(2) HEADER (AKA TOPBAR) 
+      where the website title,
+      and the menu icon (mobile version) or
+      navigation hyperlinks (desktop version), will live-->
     <header class="site-navbar py-3" role="banner">
+      <!-- The HTML <header> element represents introductory content;
+        NOT THE SAME AS <head>.
+        "banner" is known as a landmark (helps in assistive technology). -->
 
       <div class="container-fluid">
         <div class="row align-items-center">
-          
+
+          <!-- (2.1) LHS OF THE TOPBAR: SITE TITLE (BOTH MOBILE AND DESKTOP VERSION) -->
           <div class="col-6 col-xl-2" data-aos="fade-down">
-            <h1 class="mb-0"><a href="index.html" class="text-black h2 mb-0">Photon</a></h1>
+            <h1 class="mb-0"><a href="index.html" class="text-black h2 mb-0">The Eastern Phoebe</a></h1>
           </div>
+
+          <!-- (2.2) CENTER OF THE TOPBAR: DIV FOR THE NAVIGATION HYPERLINKS (DESKTOP VERSION ONLY)
+            In the mobile version, the menu content is shown in the div of class "site-mobile-menu-body" above (see (1)), instead of over here-->
           <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
+            <!-- The above div class is for the desktop version. For the mobile version, the div class is toggled to: 
+              <div class="col-10 col-md-8 d-none d-xl-block aos-init aos-animate" data-aos="fade-down">
+            
+              Note that data-aos is a custom attribute 
+              (since custom attributes are given by data-*)
+            
+              Also, note that .d-none {
+                              display: none!important;
+                                -> this display is only computed 
+                                in mobile version (i.e. do not show the navigation hyperlinks). In desktop version, display is computed as "block" instead.
+                            } -->
+
+
+            <!-- this is the container for the navigation hyperlinks in the desktop version-->
             <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
 
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+                <!-- the display of this ul is none in mobile version-->
                 <li class="active"><a href="index.html">Home</a></li>
                 <li class="has-children">
                   <a href="single.html">Gallery</a>
@@ -80,7 +133,10 @@
             </nav>
           </div>
 
+          <!-- (2.3) RHS OF THE TOPBAR: SOCIAL MEDIA ICONS (DESKTOP VERSION) OR DROPDOWN MENU (MOBILE VERSION) -->
           <div class="col-6 col-xl-2 text-right" data-aos="fade-down">
+
+            <!-- (2.3.1) DESKTOP VERSION: RHS OF TOPBAR = DIV FOR THE SOCIAL MEDIA ICONS -->
             <div class="d-none d-xl-inline-block">
               <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
                 <li>
@@ -97,107 +153,114 @@
                 </li>
               </ul>
             </div>
+            <!-- The above div class is for desktop version. For mobile version, the social media links are shown in the div of class "site-mobile-menu" (see (1)) instead, i.e. <div class="site-mobile-menu-body"> ...
+                                  <ul class="site-nav-wrap" data-class="social"> -->
 
-            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+            <!-- (2.3.2) MOBILE VERSION: RHS OF TOPBAR = "OPEN MENU" TOGGLE. Note that the actual menu column that drops down when you click on this toggle is already defined in (1) -->
 
-          </div>
+            <!-- This is the div for the "open menu" toggle-->
+            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;">
+              <a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a>
+            </div> <!-- end topbar rhs mobile version -->
 
-        </div>
-      </div>
-      
-    </header>
+          </div> <!-- end topbar rhs -->
+        </div> <!-- end some container -->
+      </div> <!-- end some container -->
+    </header> <!-- end topbar -->
 
-
-
-  <div class="container-fluid" data-aos="fade" data-aos-delay="500">
-    <div class="swiper-container images-carousel">
+    <!-- (3) THE HORIZONTAL SCROLLING IMAGES -->
+    <div class="container-fluid" data-aos="fade" data-aos-delay="500">
+      <div class="swiper-container images-carousel">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="image-wrap">
-                <div class="image-info">
-                  <h2 class="mb-3">Nature</h2>
-                  <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
-                </div>
-                <img src="images/img_1.jpg" alt="Image">
+          <div class="swiper-slide">
+            <div class="image-wrap">
+              <div class="image-info">
+                <h2 class="mb-3">Nature</h2>
+                <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
               </div>
+              <img src="images/img_1.jpg" alt="Image">
             </div>
-            <div class="swiper-slide">
-              <div class="image-wrap">
-                <div class="image-info">
-                  <h2 class="mb-3">Portrait</h2>
-                  <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
-                </div>
-                <img src="images/img_2.jpg" alt="Image">
+          </div>
+          <div class="swiper-slide">
+            <div class="image-wrap">
+              <div class="image-info">
+                <h2 class="mb-3">Portrait</h2>
+                <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
               </div>
+              <img src="images/img_2.jpg" alt="Image">
             </div>
-            <div class="swiper-slide">
-              <div class="image-wrap">
-                <div class="image-info">
-                  <h2 class="mb-3">People</h2>
-                  <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
-                </div>
-                <img src="images/img_3.jpg" alt="Image">
+          </div>
+          <div class="swiper-slide">
+            <div class="image-wrap">
+              <div class="image-info">
+                <h2 class="mb-3">People</h2>
+                <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
               </div>
+              <img src="images/img_3.jpg" alt="Image">
             </div>
-            <div class="swiper-slide">
-              <div class="image-wrap">
-                <div class="image-info">
-                  <h2 class="mb-3">Architecture</h2>
-                  <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
-                </div>
-                <img src="images/img_4.jpg" alt="Image">
+          </div>
+          <div class="swiper-slide">
+            <div class="image-wrap">
+              <div class="image-info">
+                <h2 class="mb-3">Architecture</h2>
+                <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
               </div>
+              <img src="images/img_4.jpg" alt="Image">
             </div>
-            <div class="swiper-slide">
-              <div class="image-wrap">
-                <div class="image-info">
-                  <h2 class="mb-3">Animals</h2>
-                  <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
-                </div>
-                <img src="images/img_5.jpg" alt="Image">
+          </div>
+          <div class="swiper-slide">
+            <div class="image-wrap">
+              <div class="image-info">
+                <h2 class="mb-3">Animals</h2>
+                <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
               </div>
+              <img src="images/img_5.jpg" alt="Image">
             </div>
-            <div class="swiper-slide">
-              <div class="image-wrap">
-                <div class="image-info">
-                  <h2 class="mb-3">Sports</h2>
-                  <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
-                </div>
-                <img src="images/img_6.jpg" alt="Image">
+          </div>
+          <div class="swiper-slide">
+            <div class="image-wrap">
+              <div class="image-info">
+                <h2 class="mb-3">Sports</h2>
+                <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
               </div>
+              <img src="images/img_6.jpg" alt="Image">
             </div>
-            <div class="swiper-slide">
-              <div class="image-wrap">
-                <div class="image-info">
-                  <h2 class="mb-3">Travel</h2>
-                  <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
-                </div>
-                <img src="images/img_7.jpg" alt="Image">
+          </div>
+          <div class="swiper-slide">
+            <div class="image-wrap">
+              <div class="image-info">
+                <h2 class="mb-3">Travel</h2>
+                <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
               </div>
+              <img src="images/img_7.jpg" alt="Image">
             </div>
+          </div>
         </div>
 
         <div class="swiper-pagination"></div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
         <div class="swiper-scrollbar"></div>
+      </div>
     </div>
-  </div>
 
-  <div class="footer py-4">
-    <div class="container-fluid">
-      <p>
-      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-      Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-      </p>
+    <div class="footer py-4">
+      <div class="container-fluid">
+        <p>
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          Copyright &copy;
+          <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+          <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i
+            class="icon-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        </p>
+      </div>
     </div>
-  </div>
 
-    
 
-    
-    
+
+
+
   </div>
 
   <script src="js/jquery-3.3.1.min.js"></script>
@@ -218,12 +281,13 @@
   <script src="js/jquery.mousewheel.min.js"></script>
 
   <script src="js/main.js"></script>
-  
+
   <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
       $('#lightgallery').lightGallery();
     });
   </script>
-    
-  </body>
+
+</body>
+
 </html>
