@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Wildlife Spoors - from the NTU Nature Guiding Committee</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300i,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+  <link rel="stylesheet" href="css/lightgallery.min.css">
+
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+  <link rel="stylesheet" href="css/swiper.css">
+
+  <link rel="stylesheet" href="css/aos.css">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- GOOGLE MAPS API -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmqCLMpjav5u1L-An417XmSE0vrqi5Sj0&callback=initMap&libraries=&v=weekly" defer></script><!--TODO: CLOSE THE GCLOUD PROJ LATER-->
+  <script>
+    ( // round bracket means we evaluate the function that is inside the round bracket!!
+      function (exports) { 
+      "use strict";
+        function initMap() {
+          var startpt = { lat: 1.357268, lng:103.850221 };
+          exports.map = new google.maps.Map(document.getElementById("map"), { 
+            // the google.maps.Map() fn is from the script src above
+            center: startpt,
+            zoom: 16
+          });
+          new google.maps.Marker({
+            position: startpt,
+            map: exports.map,
+            label: "A"
+          });
+          new google.maps.Marker({
+            position: {lat:1.359065, lng:103.850498},
+            map: exports.map,
+            label: "B"
+          });
+          new google.maps.Marker({
+            position: {lat:1.360528, lng:103.847136},
+            map: exports.map,
+            label: "C"
+          });
+        }
+        exports.initMap = initMap;
+      }
+    )((this.window = this.window || {})); // i.e. make the <div id="map"> show the actual interactive gmap
+
+  </script>
+</head>
+
+<body onload="getWeather()">
+
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <header class="site-navbar py-3 border-bottom" role="banner">
+
+      <div class="container-fluid">
+        <div class="row align-items-center">
+
+          <div class="col-6 col-xl-2" data-aos="fade-down">
+            <h1 class="mb-0"><a href="index.html" class="text-black h2 mb-0">Wildlife Spoors</a></h1>
+          </div>
+          <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
+            <!-- this is the container for the navigation hyperlinks in the desktop version-->
+            <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
+
+              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+                <!-- the display of this ul is none in mobile version-->
+                <li class="active"><a href="index.html">Home</a></li>
+                <li class="has-children">
+                  <!-- TODO: add links -->
+                  <a href="#">Gallery</a>
+                  <!--single.html??-->
+                  <ul class="dropdown">
+                    <li><a href="./plants.html">Plants</a></li>
+                    <li><a href="./animals.html">Animals</a></li>
+                    <li><a href="./insects.html">Insects</a></li>
+
+                    <li class="has-children">
+                      <a href="#">Past events</a>
+                      <ul class="dropdown">
+                        <li><a href="./iccs.html">International Coastal Cleanup Singapore</a></li>
+                        <li><a href="./mmnt.html">Mangrove Mystery Nature Trail</a></li>
+                        <li><a href="#">Menu Three</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="events.html">Events and updates</a></li>
+                <li><a href="trails.html">DIY nature trails</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="col-6 col-xl-2 text-right" data-aos="fade-down">
+            <div class="d-none d-xl-inline-block">
+              <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
+                <li>
+                  <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                </li>
+                <li>
+                  <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                </li>
+                <li>
+                  <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                </li>
+                <li>
+                  <a href="#" class="pl-3 pr-3"><span class="icon-youtube-play"></span></a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#"
+                class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </header>
+
+    <!-- ACTUAL CONTENT -->
+    <div class="site-section" data-aos="fade">
+
+      <!-- (1) CONTAINER FOR WEBPAGE SECTION TITLE -->
+      <div class="container-fluid">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-9">
+            <h2 class="site-section-heading text-center">DIY Trails</h2>
+          </div>
+        </div>  
+      <div>
+
+      <!-- (2) CONTAINER FOR GMAPS API -->
+      <!-- SEE BOOTSTRAP GRID SYSTEM
+        https://coursetro.com/posts/design/75/Bootstrap-4-Grid-Tutorial 
+        sm, md, lg = screen size, i.e. responsive grid. 
+        Cols are nested within rows-->
+      <!-- TODO: What is the diff between md and mb -->
+        <!-- OH OKAY mb is about the margin bottom, and md is just the medium size screen-->
+
+      <div class="container-fluid mb-5">
+        
+        <div class="row justify-content-center"> <!-- name of the route -->
+          <h2 class = "col-md-9 text-center">Bishan-AMK Park route</h2>
+        </div>
+
+        <div class="row justify-content-center"> <!-- map of the route -->
+          <div class="col-lg-8 mb-5" style = "height:40em"> <!-- TODO: Why does bootsrap container-fluid and #map{height 100% not automatically show the entire mapppppp arghhhh-->
+            <div id="map" style = "height:100%"></div>
+          </div>
+        </div>
+
+        <div class = "row justify-content-center">  <!-- details of the route -->
+          <div class = "col-md-9 text-center"> 
+            <h4> Points of interest</h4>
+            <ul style="list-style: none;">
+              <li>A: Start point (10 min from Bishan MRT)</li>
+              <li>B: Lotus pond</li>
+              <li>C: Swampy area with lots of birds</li>
+            </ul>
+          </div>
+        </div>
+
+      </div> <!-- end container (2) -->
+    </div> <!-- end the content div-->
+
+    <!-- (3) POPULATED BY NEA WEATHER API -->
+    <div class="container-fluid">
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-9">
+          <h4 class="text-center">"Should I bring an umbrella?"</h4>
+          <p class="text-center">The weather forecast for the next two hours is :
+            <span id="to-fill" style="background-color:yellow;"></span>
+          </p>
+        </div>
+      </div>  
+    <div>
+
+    <!-- FOOTER -->
+    <div class="footer py-4">
+      <div class="container-fluid text-center">
+        <p>
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          Copyright &copy;
+          <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+          <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i
+            class="icon-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/picturefill.min.js"></script>
+  <script src="js/lightgallery-all.min.js"></script>
+  <script src="js/jquery.mousewheel.min.js"></script>
+
+  <script src="js/main.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $('#lightgallery').lightGallery();
+    });
+  </script>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+  <script>
+    async function getWeather() {
+      let response = await axios.get("https://api.data.gov.sg/v1/environment/2-hour-weather-forecast");
+      //console.log(response.data.items[0]);
+      for (let fc of response.data.items[0].forecasts){
+        if (fc.area == "Bishan"){
+          var forecast = fc.forecast;
+          //console.log("found");
+          break;
+        }
+      }
+      //console.log(forecast);
+      document.querySelector("#to-fill").innerText = forecast;
+    }
+
+  </script>
+
+</body>
+
+</html>

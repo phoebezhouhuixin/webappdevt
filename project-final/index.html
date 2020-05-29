@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>The Eastern Phoebe</title>
+  <title>Wildlife Spoors - from the NTU Nature Guiding Committee</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -29,7 +29,7 @@
 
 </head>
 
-<body>
+<body onload="onloadHomepage();">
 
   <div class="site-wrap">
     <!-- Chrome computes a ":before" element here, which is not shown in VSCode. This is because
@@ -44,7 +44,7 @@
 
     <!-- (1) MOBILE VERSION: DIV FOR THE DROPDOWN MENU ON THE RHS. THIS IS THE ENTIRE RHS COLUMN THAT DROPS DOWN WHEN YOU CLICK ON THE "OPEN MENU" TOGGLE. 
       In the desktop version, we don't see this because there are more classes that are added to this div (other than site-mobile-menu), and the CSS rules of those classes include translateX(110%) such that we don't see the mobile menu anymore-->
-    <div class="site-mobile-menu">)
+    <div class="site-mobile-menu">
 
       <!-- (1.1) MOBILE VERSION: DIV FOR THE "CLOSE MENU" TOGGLE-->
       <div class="site-mobile-menu-header">
@@ -63,7 +63,7 @@
       <!-- (1.2) MOBILE VERSION: DIV FOR THE DROPDOWN MENU CONTENT -->
       <div class="site-mobile-menu-body">
         <!-- HTML code for the ul is defined only below,
-        but will be computed by chrome here in this div when in mobile version. TODO: How does chrome know where to put the HTML content when in mobile version? Find the toggle js-->
+        but will be computed by chrome here in this div when in mobile version.  -->
       </div>
     </div>
 
@@ -77,11 +77,11 @@
         "banner" is known as a landmark (helps in assistive technology). -->
 
       <div class="container-fluid">
-        <div class="row align-items-center">
+        <div class="row align-items-center" style = "padding-left: 1em; padding-right:1em">
 
           <!-- (2.1) LHS OF THE TOPBAR: SITE TITLE (BOTH MOBILE AND DESKTOP VERSION) -->
           <div class="col-6 col-xl-2" data-aos="fade-down">
-            <h1 class="mb-0"><a href="index.html" class="text-black h2 mb-0">The Eastern Phoebe</a></h1>
+            <h1 class="mb-0"><a href="index.html" class="text-black h2 mb-0">Wildlife Spoors</a></h1>
           </div>
 
           <!-- (2.2) CENTER OF THE TOPBAR: DIV FOR THE NAVIGATION HYPERLINKS (DESKTOP VERSION ONLY)
@@ -106,27 +106,27 @@
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
                 <!-- the display of this ul is none in mobile version-->
                 <li class="active"><a href="index.html">Home</a></li>
-                <li class="has-children">
-                  <a href="single.html">Gallery</a>
+                <li class="has-children"> <!-- TODO: add links -->
+                  <a href="#">Gallery</a> <!-- want to use many different html files,
+                    rather than single-page application, 
+                    because otherwise opening in new window is weirdddd -->
                   <ul class="dropdown">
-                    <li><a href="#">Nature</a></li>
-                    <li><a href="#">Portrait</a></li>
-                    <li><a href="#">People</a></li>
-                    <li><a href="#">Architecture</a></li>
-                    <li><a href="#">Animals</a></li>
-                    <li><a href="#">Sports</a></li>
-                    <li><a href="#">Travel</a></li>
+                    <li><a href="./plants.html">Plants</a></li>
+                    <li><a href="./animals.html">Animals</a></li> 
+                    <li><a href="./insects.html">Insects</a></li>
+            
                     <li class="has-children">
-                      <a href="#">Sub Menu</a>
+                      <a href="#">Past events</a>
                       <ul class="dropdown">
-                        <li><a href="#">Menu One</a></li>
-                        <li><a href="#">Menu Two</a></li>
+                        <li><a href="./iccs.html">International Coastal Cleanup Singapore</a></li>
+                        <li><a href="./mmnt.html">Mangrove Mystery Nature Trail</a></li>
                         <li><a href="#">Menu Three</a></li>
                       </ul>
                     </li>
                   </ul>
                 </li>
-                <li><a href="services.html">Services</a></li>
+                <li><a href="events.html">Events and updates</a></li>
+                <li><a href="trails.html">DIY nature trails</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
               </ul>
@@ -168,15 +168,19 @@
       </div> <!-- end some container -->
     </header> <!-- end topbar -->
 
-    <!-- (3) THE HORIZONTAL SCROLLING IMAGES -->
+    <!-- (3) THE HORIZONTAL SCROLLING IMAGES --> 
+    <!-- EACH ONE HAS TRANSLATEX(110%) SO THAT IT WILL BE HIDDEN WHEN YOU SCROLL-->
     <div class="container-fluid" data-aos="fade" data-aos-delay="500">
-      <div class="swiper-container images-carousel">
+      <div class="swiper-container images-carousel"> 
+        <!-- mobile version would be 
+        <div class="swiper-container images-carousel swiper-container-horizontal swiper-container-free-mode swiper-container-android"> -->
+
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div class="image-wrap">
               <div class="image-info">
-                <h2 class="mb-3">Nature</h2>
-                <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
+                <h2 class="mb-3">Plants</h2>
+                <a href="./plants.html" class="btn btn-outline-white py-2 px-4">Explore</a>
               </div>
               <img src="images/img_1.jpg" alt="Image">
             </div>
@@ -184,8 +188,8 @@
           <div class="swiper-slide">
             <div class="image-wrap">
               <div class="image-info">
-                <h2 class="mb-3">Portrait</h2>
-                <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
+                <h2 class="mb-3">Animals</h2>
+                <a href="single.html" class="btn btn-outline-white py-2 px-4">Explore</a>
               </div>
               <img src="images/img_2.jpg" alt="Image">
             </div>
@@ -193,8 +197,8 @@
           <div class="swiper-slide">
             <div class="image-wrap">
               <div class="image-info">
-                <h2 class="mb-3">People</h2>
-                <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
+                <h2 class="mb-3">Insects</h2>
+                <a href="single.html" class="btn btn-outline-white py-2 px-4">Explore</a>
               </div>
               <img src="images/img_3.jpg" alt="Image">
             </div>
@@ -202,37 +206,10 @@
           <div class="swiper-slide">
             <div class="image-wrap">
               <div class="image-info">
-                <h2 class="mb-3">Architecture</h2>
-                <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
+                <h2 class="mb-3">Past events</h2>
+                <a href="single.html" class="btn btn-outline-white py-2 px-4">Explore</a>
               </div>
               <img src="images/img_4.jpg" alt="Image">
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="image-wrap">
-              <div class="image-info">
-                <h2 class="mb-3">Animals</h2>
-                <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
-              </div>
-              <img src="images/img_5.jpg" alt="Image">
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="image-wrap">
-              <div class="image-info">
-                <h2 class="mb-3">Sports</h2>
-                <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
-              </div>
-              <img src="images/img_6.jpg" alt="Image">
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="image-wrap">
-              <div class="image-info">
-                <h2 class="mb-3">Travel</h2>
-                <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
-              </div>
-              <img src="images/img_7.jpg" alt="Image">
             </div>
           </div>
         </div>
@@ -242,6 +219,36 @@
         <div class="swiper-button-next"></div>
         <div class="swiper-scrollbar"></div>
       </div>
+    </div>
+    <!-- (4) THE QUESTION FORM -->
+    <div class="container-fluid" style = "padding: 2em;">
+      <h5><br>Start your Nature Diary today!</h5>
+      <div class = "qn-form">
+        <form>
+          <div class="form-group">
+            <label for="speciesname">Name of flora/ fauna</label>
+            <input type="text" class="form-control" id="speciesname">
+          </div>
+          <div class="form-group">
+            <label for="location">Sighting location</label>
+            <input type="text" class="form-control" id="location">
+          </div>
+          <div class="form-group">
+            <label for="speciesimg">Upload a picture of the flora/fauna</label>
+            <input type="file" class="form-control-file" id="speciesimg">
+          </div>
+          <div class="form-group">
+            <label for="comment">Details (e.g. size, smell, behaviour (if applicable), sounds)</label>
+            <textarea class="form-control" id="comment" rows="5"></textarea>
+          </div>
+          <button id = "submit-btn">Submit</button>
+          <br/><br/><br/>
+        </form>
+      </div>
+    </div>
+    
+    <div class="container-fluid" style = "padding: 2em;" id = "mySubmissions">
+      <!-- POPULATE WITH THE DATABASE STUFF-->
     </div>
 
     <div class="footer py-4">
@@ -257,12 +264,8 @@
       </div>
     </div>
 
-
-
-
-
   </div>
-
+    
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/jquery-ui.js"></script>
@@ -281,13 +284,49 @@
   <script src="js/jquery.mousewheel.min.js"></script>
 
   <script src="js/main.js"></script>
-
   <script>
     $(document).ready(function () {
       $('#lightgallery').lightGallery();
     });
   </script>
 
+
+  <!-- QUESTION FORM SCRIPT-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+  <script src="idb.js"></script>
+  <script src="db.js"></script>
+  <script>
+    async function onloadHomepage(){
+      let db = await connect("my-submissions", VERSION);
+      displayMySubmissions(db); // can say this here although we only define the function later
+      // because the "function" keyword is 
+
+      let submitbutton = document.getElementById("submit-btn");
+      submitbutton.addEventListener("click", async function(){
+        let speciesname = document.querySelector("#speciesname").value;
+        let location = document.querySelector("#location").value;
+        let speciesimg = document.querySelector("#speciesimg").value;
+        let comment = document.querySelector("#comment").value;
+
+        let response = await addEntry(db, speciesname, location, speciesimg, comment);
+        console.log(response.data);
+
+        displayMyEntries(db);
+      })
+    };
+    async function displayMyEntries(){
+      let template = `<div class = "row justify-content-center md-5">
+                        <div class = "col-md-7 text-center">
+                          <p>Species name: <span id="submissionName"></span></p>
+                          <p>Location of sighting: <span id = "submissionLocation"></span></p>
+                          <p>Image: <span id = "submissionImg"></span></p>
+                          <p>Additional info: <span id = "submissionComment"></span></p>
+                        </div>
+                      </div>`;
+       
+    }
+
+  </script>
 </body>
 
 </html>

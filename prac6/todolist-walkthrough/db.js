@@ -9,7 +9,7 @@ async function connect(dbname, version) {
     return false;
   }
 
-  let db = await idb.open(dbname, version, function(db){
+  let db = await idb.open(dbname, version, function(db){ // kind of like module.function()
     // shows the current version of the database
     console.log(db.oldVersion);
     if (db.oldVersion <=1) { // no database exists yet

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Wildlife Spoors - from the NTU Nature Guiding Committee</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300i,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+  <link rel="stylesheet" href="css/lightgallery.min.css">
+
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+  <link rel="stylesheet" href="css/swiper.css">
+
+  <link rel="stylesheet" href="css/aos.css">
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body onload = "getEventbrite(); getInsta();">
+
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <header class="site-navbar py-3 border-bottom" role="banner">
+
+      <div class="container-fluid">
+        <div class="row align-items-center">
+
+          <div class="col-6 col-xl-2" data-aos="fade-down">
+            <h1 class="mb-0"><a href="index.html" class="text-black h2 mb-0">Wildlife Spoors</a></h1>
+          </div>
+          <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
+            <!-- this is the container for the navigation hyperlinks in the desktop version-->
+            <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
+
+              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+                <!-- the display of this ul is none in mobile version-->
+                <li class="active"><a href="index.html">Home</a></li>
+                <li class="has-children">
+                  <!-- TODO: add links -->
+                  <a href="#">Gallery</a>
+                  <!--single.html??-->
+                  <ul class="dropdown">
+                    <li><a href="./plants.html">Plants</a></li>
+                    <li><a href="./animals.html">Animals</a></li>
+                    <li><a href="./insects.html">Insects</a></li>
+
+                    <li class="has-children">
+                      <a href="#">Past events</a>
+                      <ul class="dropdown">
+                        <li><a href="./iccs.html">International Coastal Cleanup Singapore</a></li>
+                        <li><a href="./mmnt.html">Mangrove Mystery Nature Trail</a></li>
+                        <li><a href="#">Menu Three</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="events.html">Events and updates</a></li>
+                <li><a href="trails.html">DIY nature trails</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="col-6 col-xl-2 text-right" data-aos="fade-down">
+            <div class="d-none d-xl-inline-block">
+              <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
+                <li>
+                  <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                </li>
+                <li>
+                  <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                </li>
+                <li>
+                  <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                </li>
+                <li>
+                  <a href="#" class="pl-3 pr-3"><span class="icon-youtube-play"></span></a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#"
+                class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </header>
+
+    <!-- THE ACTUAL CONTENT -->
+    <div class="" data-aos="fade">
+      <div class="container-fluid">
+
+        <div class="row justify-content-center">
+          <div class="col-md-7"> 
+            <div class="row mb-5 site-section"><!-- The first row of the column is the title-->
+              <div class="col-12 ">
+                <h2 class="site-section-heading text-center">Our Events</h2>
+              </div>
+            </div> <!-- end the first row of the column -->
+
+            <div class="row mb-5 justify-content-center"> <!-- the second row of the column -->
+              <div class="col-md-9 text-center"> <!-- the LHS column of this second row-->
+                <img src="images/events_img.jpg" alt="Images" class="img-fluid">
+              </div>
+            </div> <!-- end the second row of the column-->
+
+            <div class="row mb-5  justify-content-center">
+              <div class="col-md-9 text-center"> <!-- the RHS column of this second row 
+                (size according to screen, by using @media (min-width: 768px).col-md-4 {...} -->
+                <h3>Come join us on our walks and training programmes!</h3>
+                <p>Every year, we have a lineup of walks with a range of themes (e.g. rainforest, mangrove, park, freshwater etc), designed to immerse you different aspects of Singapore's ecosystem! We will also share about conservation-related issues during our walks, because nature is not just about just knowledge and beauty- it is about action. </p>
+              </div>
+            </div>
+            
+            
+            <div id = "eventbriteContent">
+              <!-- POPULATE THE REMAINING PART WITH THE GETTED EVENTS FROM EVENRBRITE
+              All Eventbrite API requests must be authenticated with a valid OAuth token.
+              whats the diff between authentication and authorization?
+              Authentication verifies your identity while authorization verifies your privileges. OAuth 2 (Open Authorization) is a security technology used for token-based authorization on the Internet. An OAuth token can also be called a private token.
+             -->
+            </div>
+            
+          </div> <!-- end the column-->
+        </div> <!-- end the row justify-content-center-->
+
+      </div> <!-- end the container-->
+
+      <!-- ANOTHER CONTAINER FOR INSTA-->
+      <div class="container-fluid">
+
+        <div class="row justify-content-center">
+          <div class="col-md-7"> 
+            <div class="row mb-5 site-section">
+              <div class="col-12 ">
+                <h2 class="site-section-heading text-center">Our Updates</h2>
+              </div>
+            </div> <!-- end the first row of the column -->
+            <div id = "instaContent">
+              <!-- insert api stuff here wheeeee -->
+            </div>
+          </div>
+        </div>
+
+
+    </div> <!-- end the content div-->
+
+    <!-- FOOTER-->
+    <div class="footer py-4">
+      <div class="container-fluid text-center">
+        <p>
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          Copyright &copy;
+          <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+          <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i
+            class="icon-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        </p>
+      </div>
+    </div>
+  </div> <!-- end the site-wrap-->
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/picturefill.min.js"></script>
+  <script src="js/lightgallery-all.min.js"></script>
+  <script src="js/jquery.mousewheel.min.js"></script>
+
+  <script src="js/main.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $('#lightgallery').lightGallery();
+    });
+  </script>
+
+  <!-- EVENTBRITE SCRIPT -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+  <script>
+    /* curl is a tool to transfer data from or to a server, using one of the supported protocols (FTP, HTTP, MQTT etc).
+    curl -X GET   https://www.eventbriteapi.com/v3/users/me/events/   -H 'Authorization: Bearer PERSONAL_OAUTH_TOKEN' 
+    How do you use curl in axios weorfijwpeofji */
+    let contentDiv = document.getElementById("eventbriteContent")
+
+    async function getEventbrite() {
+      let response = await axios.get("https://www.eventbriteapi.com/v3/users/me/events/", {
+        headers: {"Authorization":"Bearer JZOKR2AGASWRWJSIP4OD"} // OAuth key
+        // HTTP headers let the client and the server pass additional information with an HTTP request or response.
+      }); // OMG. IT WORKED. 
+      //console.log(response);
+      for (let listing of response.data.events){
+        let listingID = listing.id;
+        //console.log(listingID);
+        let urlForAxios = "".concat("https://www.eventbriteapi.com/v3/events/",listingID,"/?expand=venue");
+     
+        let listingVenueResponse = await axios.get(urlForAxios, {
+          headers: {"Authorization":"Bearer JZOKR2AGASWRWJSIP4OD"}
+        });
+        // console.log(listingVenueResponse.data.venue); // yay
+        let template = `<div class="row mb-5 justify-content-center"> <!-- new row for each listing -->
+                          <div class="col-md-7 text-center"> 
+                            <img id = "listingImage" alt="Images" class="img-fluid"></img>
+                          </div>
+                        </div>
+                        <div class="row mb-5 justify-content-center">
+                          <div class="col-md-9 text-center"> 
+                            <h3 id = "listingName"></h3>
+                            <p id = "listingDescription"></p>
+                            <p><span id = "listingStart"></span> - <span id = "listingEnd"></span></p>
+                            <p>Venue: <span id = "listingLocation"></span> (<span id = "listingAddress"></span>) </p>
+                            <p>Link: <a id = "listingUrl">More info on Eventbrite</a><p>
+                          
+                          </div>
+                        </div> `
+        let listingElement = document.createElement('div');
+        listingElement.innerHTML = template;
+        //console.log(listingElement.querySelector("#listingName"));
+        listingElement.querySelector("#listingName").innerText = listing.name.text;// why cannot use getElementByID
+        listingElement.querySelector("#listingDescription").innerText = listing.description.text;
+        listingElement.querySelector("#listingStart").innerHTML = listing.start.local;
+        listingElement.querySelector("#listingEnd").innerHTML = listing.end.local;
+        listingElement.querySelector("#listingLocation").innerHTML = listingVenueResponse.data.venue.name;
+        listingElement.querySelector("#listingAddress").innerHTML = listingVenueResponse.data.venue.address.address_1; 
+        listingElement.querySelector("#listingImage").src =  listing.logo.url;
+        listingElement.querySelector("#listingUrl").href =  listing.url;
+        
+        //console.log(listingElement);
+        
+        // let fulltext = await axios.get(
+        //   "".concat("https://www.eventbriteapi.com/v3/events/",listingID,"/description"), {
+        //   headers: {"Authorization":"Bearer JZOKR2AGASWRWJSIP4OD"}
+        // })
+        // console.log(fulltext);
+        // // Access to XMLHttpRequest at 'https://www.eventbriteapi.com/v3/events/106914574370/description' from origin 'null' has been blocked by CORS policy
+
+        contentDiv.appendChild(listingElement);
+      }
+    }
+  </script>
+
+  <!-- INSTAGRAM SCRIPT -->
+  <script>
+    async function getInsta(){
+      let response = await axios.get("https://www.instagram.com/earthlinkntu/?__a=1");
+      console.log(response);
+      let contentDiv = document.getElementById("instaContent");
+      for (let posted of response.data.graphql.user.edge_owner_to_timeline_media.edges){ // COOL its graphql
+        let template = `
+          <div class="row mb-5 justify-content-center"> <!-- new row for each listing -->
+            <div class="col-md-7 text-center"> 
+              <img id = "postedImage" alt="Images" class="img-fluid"></img>
+            </div>
+          </div>
+          <div class="row mb-5 justify-content-center">
+            <div class="col-md-9 text-center"> 
+              <h3 id = "postedDate"></h3>
+              <p id = "postedCaption"></p>
+            </div>
+          </div>`
+        let postedElement = document.createElement('div');
+        postedElement.innerHTML = template;
+        postedElement.querySelector("#postedImage").src = posted.node.display_url;
+
+        // extract the date from the sentence :-(
+        // https://stackoverflow.com/questions/52045970/get-first-sentence-with-regex-javascript
+        const regex = /.*?(\.)(?=\s[A-Z])/;
+        let m = regex.exec(posted.node.accessibility_caption)[0];
+        let date = m.replace("Photo by Earthlink NTU on ","");
+        //console.log(date);
+
+        postedElement.querySelector("#postedDate").innerText = date;
+        postedElement.querySelector("#postedCaption").innerText = posted.node.edge_media_to_caption.edges[0].node.text;
+        
+        contentDiv.appendChild(postedElement);
+        //console.log(postedElement);
+      }
+      
+    }    
+    
+    
+  </script>
+</body>
+
+</html>
