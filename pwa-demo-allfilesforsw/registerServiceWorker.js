@@ -1,4 +1,4 @@
-// register the srvice worker
+// register the service worker
 window.onload = async () => {
     'use strict';
   
